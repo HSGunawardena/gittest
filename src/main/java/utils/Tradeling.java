@@ -35,7 +35,7 @@ public class Tradeling {
     public void openBrowser() {
         System.setProperty("webdriver.chrome.driver", getChromeDriverFilePath());
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         options.setExperimentalOption("useAutomationExtension", false);
         options.setExperimentalOption("excludeSwitches",
                 Collections.singletonList("enable-automation"));

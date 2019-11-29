@@ -2,6 +2,7 @@ package example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import utils.PropertyFileReader;
 import utils.Tradeling;
 
@@ -13,7 +14,8 @@ public class BinanceHomePage {
 
     public BinanceMarketsHomePage clickMarketMenu() {
         Tradeling.getInstance().waitForElement(By.linkText(navigationMenuMarketElement), 10);
-        driver.findElement(By.linkText(navigationMenuMarketElement)).click();
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(By.linkText(navigationMenuMarketElement))).click().build().perform();
         return new BinanceMarketsHomePage();
     }
 }

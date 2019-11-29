@@ -1,6 +1,45 @@
 # gittest
 To test git hub
 
-Now this is edited
+pom.xml to be updated with following
 
-Again
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub HSGunawardena Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/HSGunawardena/gittest</url>
+        </repository>
+    </distributionManagement>
+
+This goes in settings.xml in .m2 folder
+
+    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+      <activeProfiles>
+        <activeProfile>github</activeProfile>
+      </activeProfiles>
+
+      <profiles>
+        <profile>
+          <id>github</id>
+          <repositories>
+            <repository>
+              <id>github</id>
+              <name>GitHub HSGunawardena Apache Maven Packages</name>
+              <url>https://maven.pkg.github.com/HSGunawardena/gittest</url>
+            </repository>
+          </repositories>
+        </profile>
+      </profiles>
+
+        <servers>
+        <server>
+          <id>github</id>
+          <username>HSGunawardena</username>
+          <password>3bc3ff3626722166fd144963e3899542a17cdc2f</password>
+        </server>
+      </servers>
+    </settings>

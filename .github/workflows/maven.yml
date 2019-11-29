@@ -15,3 +15,5 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B -DskipTests=true package --file pom.xml
+    - name: Deploy with Maven GIT
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/HSGunawardena -Dtoken=GH_TOKEN

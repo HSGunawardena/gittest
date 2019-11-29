@@ -1,3 +1,4 @@
+import example.BinanceETHBTCHomePage;
 import example.BinanceHomePage;
 import example.BinanceMarketsHomePage;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +10,7 @@ import utils.Tradeling;
 public class VerifyImportantInformationTest {
     WebDriver driver;
     BinanceHomePage binanceHomePage;
-    BinanceMarketsHomePage binanceMarketsHomePage;
+    BinanceETHBTCHomePage binanceETHBTCHomePage;
 
     @BeforeMethod
     public void setUp() {
@@ -17,8 +18,7 @@ public class VerifyImportantInformationTest {
         driver = Tradeling.getInstance().getDriver();
         Tradeling.getInstance().navigateToUrl();
         binanceHomePage = new BinanceHomePage();
-        binanceMarketsHomePage = binanceHomePage.clickMarketMenu();
-        binanceMarketsHomePage.clickETHBTCLink();
+        binanceETHBTCHomePage = binanceHomePage.clickMarketMenu().clickETHBTCLink();
     }
 
     @Test (priority = 1, groups = {"smoke","reg"})

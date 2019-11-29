@@ -28,6 +28,6 @@ public class VerifyImportantInformationTest {
 
     @AfterMethod
     public void tearDown() {
-//        Tradeling.getInstance().closeBrowser();
+        Tradeling.getInstance().closeBrowser();
     }
 }

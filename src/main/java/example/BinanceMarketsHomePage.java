@@ -2,6 +2,7 @@ package example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import utils.PropertyFileReader;
 import utils.Tradeling;
 
@@ -13,7 +14,8 @@ public class BinanceMarketsHomePage {
 
     public BinanceETHBTCHomePage clickETHBTCLink() {
         Tradeling.getInstance().waitForElement(By.xpath(gridETHBTCLinkElement), 10);
-        driver.findElement(By.xpath(gridETHBTCLinkElement)).click();
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(By.xpath(gridETHBTCLinkElement))).click().build().perform();
         return new BinanceETHBTCHomePage();
     }
 }

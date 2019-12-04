@@ -6,7 +6,7 @@
 
     <groupId>test.git</groupId>
     <artifactId>gittest</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->

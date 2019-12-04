@@ -13,7 +13,5 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build with Maven
-      run: mvn -B -DskipTests=true package --file pom.xml
-    - name: Deploy with Maven GIT
-      run: mvn -DskipTests=true deploy -Dregistry=https://maven.pkg.github.com/HSGunawardena -Dtoken=GH_TOKEN
+    - name: Verify with Maven
+      run: mvn -B -DskipTests=true clean package verify --file pom.xml
